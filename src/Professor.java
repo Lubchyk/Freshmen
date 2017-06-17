@@ -4,23 +4,27 @@ import java.util.Map;
 /**
  * Created by mlv on 15.06.2017.
  */
-public class Professor {
-    String name;
-    String subject;
-    Group group;
+public class Professor extends Human{
+    private String sex;
+    private String subject;
+    private Group group;
 
-   public Professor(String name, String subject, Group group) {
+   public Professor(String name, String sex, int age, int iq, String subject, Group group) {
        this.name = name;
+       this.sex = sex;
+       this.age = age;
+       this.iq = iq;
        this.subject = subject;
        this.group = group;
    }
+   /**перераховуємо усіх студентів у групі і визначаємо відсутніх*/
    public void call_over() {
        int countOfMissing = 0;
        Iterator<Map.Entry<Student, Boolean>> iterator = group.getGroup().entrySet().iterator();
        while (iterator.hasNext()) {
            Map.Entry<Student, Boolean> pair = iterator.next();
            if (!pair.getValue()) {
-               System.out.println(pair.getKey().getName() + " Did not come to class");
+               System.out.println(pair.getKey().getName() + " did not come to class");
                countOfMissing++;
            }
        }

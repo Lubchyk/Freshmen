@@ -13,13 +13,13 @@ public class Group {
     public Group(String name) {
         this.name = name;
     }
+
     public void AddNewStudent(Student student){
         group.put(student, student.getMotivation());
     }
     public Map getGroup() {
         return group;
     }
-
     public Student getStudent(String name) {
         Student student = null;
         for (Map.Entry<Student, Boolean> pair : group.entrySet()) {
@@ -27,7 +27,7 @@ public class Group {
         }
         return student;
     }
-
+    /**Вибирає старосту групи*/
     public void choiceGroupLeader() {
         String name = "";
         int maxPoint = 0;
@@ -43,6 +43,4 @@ public class Group {
         getStudent(name).setGroupLider();
         System.out.println("Group leader chosen it is " + name);
     }
-
-
 }

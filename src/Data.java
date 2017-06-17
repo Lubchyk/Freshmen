@@ -40,10 +40,6 @@ public class Data {
         studentsName.put("Sofiya", false);
         studentsName.put("Tamara", false);
     }  
-    public String getStudentSex(String name) {
-        if (studentsName.get(name)) return Sex.MAN;
-        else return Sex.WOMAN;
-    }
 
     public String getNextStudentName() {
       String name = "";
@@ -57,5 +53,10 @@ public class Data {
             tempCount++;
         }
         return name;
+    }
+
+    public String getStudentSex(String name) {
+        if (studentsName.get(name)) return Sex.MAN;
+        else return Sex.WOMAN;
     }
 }

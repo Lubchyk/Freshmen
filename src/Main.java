@@ -8,12 +8,16 @@ public class Main {
         Group group = new Group("G15");
         Professor professor;
 
+        // наповняємо групу студентами
         for (int i = 0; i < Math.random() * 15 + 10; i++) {
             String studentName = data.getNextStudentName();
             group.AddNewStudent(new Student(studentName, data.getStudentSex(studentName)));
         }
+
         group.choiceGroupLeader();
-        professor = new Professor ("Pavlo", "History", group);
+        professor = new Professor ("Pavlo", Sex.MAN, 39, 132, "History", group);
         professor.call_over();
+
     }
+
 }
